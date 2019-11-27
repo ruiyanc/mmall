@@ -10,3 +10,24 @@
    1. 好处：提高服务的性能，并发能力，以及高可用性；提供项目架构的横向扩展能力
    2. 实现原理：通过nginx负载均衡进行请求转发
    3. 带来的问题：session登录信息存储及读取的问题；服务器定时任务并发的问题
+   4. 单机部署多应用
+      * 修改/etc/profile增加tomcat环境变量，添加多配置
+      * 修改第二台的catalina.sh 在OSxxx下加入export CATALINA_HOME=环境变量
+      * 打开conf下的server.xml，改3个端口
+      * 分别启动，再部署webapps的ROOT项目首页
+4. nginx负载均衡配置、常用策略、场景及特点
+   1. 轮询(默认)，权重，ip hash， url hash，fair
+   2. upstream 域名{ server 域名:8080 weight; server 域名:9080 weight;}
+   3. 单机可修改host文件映射本地对应域名
+   4. 编辑conf/nginx.conf配置文件，在http里upstream负载均衡server配置域名，在http节点下增加include  vhost/*.conf
+5. redis进阶
+   1. redis-cli -p 端口 -h ip -a 密码
+   2. 系统级配置
+      * info：查看redis所有配置
+      * select db空间：切换空间，save：持久化
+      * flushdb：清除当前空间key；flushall：清除所有key
+   3. 命令
+      1. ttl key：查看过期时间，expire：设置过期时间
+      2. rename：key重命名并覆盖 nx判断重复
+6. 单点登录
+
