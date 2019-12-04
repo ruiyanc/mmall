@@ -7,7 +7,7 @@ import com.mmall.vo.OrderVo;
 import java.util.Map;
 
 /**
- * Created by geely
+ * Created by yanrui
  */
 public interface IOrderService {
     ServerResponse pay(Long orderNo, Integer userId, String path);
@@ -27,5 +27,6 @@ public interface IOrderService {
     ServerResponse<PageInfo> manageSearch(Long orderNo,int pageNum,int pageSize);
     ServerResponse<String> manageSendGoods(Long orderNo);
 
+    void closeOrder(int hour);
 
 }

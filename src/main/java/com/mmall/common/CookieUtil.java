@@ -32,10 +32,12 @@ public class CookieUtil {
         return null;
     }
 
+
     public static void writeLoginToken(HttpServletResponse response, String token) {
         Cookie cookie = new Cookie(COOKIE_NAME, token);
         cookie.setDomain(COOKIE_DOMAIN);
         cookie.setPath("/");
+//        cookie.setHttpOnly(true);
         cookie.setMaxAge(60 * 60 * 24 * 365);
         log.info("write cookieName:{}, cookieValue:{}", cookie.getName(), cookie.getValue());
         response.addCookie(cookie);

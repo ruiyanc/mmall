@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- * Created by geely
+ * Created by yanrui
  */
 public class CategoryDaoTest extends TestBase {
 

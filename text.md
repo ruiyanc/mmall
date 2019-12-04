@@ -6,6 +6,7 @@
    3. @Slf4j为lomback日志框架，log.warn
 2. maven环境隔离
    1. dev和prod，profiles
+   2. mvn clean package -Dmaven.test.skip=true -p dev 打包并跳过测试，环境隔离并选dev环境
 3. tomcat集群
    1. 好处：提高服务的性能，并发能力，以及高可用性；提供项目架构的横向扩展能力
    2. 实现原理：通过nginx负载均衡进行请求转发
@@ -30,4 +31,16 @@
       1. ttl key：查看过期时间，expire：设置过期时间
       2. rename：key重命名并覆盖 nx判断重复
 6. 单点登录
-
+    1. redis+cookie+tomcat集群
+    2. 把登录的session转为cookie自定义持久化并用redis保存，集群环境下通过redis校对并获取。
+7. redis分布式
+    1. 一致性hash算法：Consistent hashing
+    2. redis集群采用分片的ShardedJedis -> RedisShardedPool
+    3. 集群与分布式的区别
+        * 集群是一种物理形态，分布式是一种工作方式
+    * 通过ShardedJedis持久化cookie实现spring-session单点登录的效果
+8. spring-session
+9. spring schedule -> 作业调度，如定时任务
+    1. cron表达式
+    2. 配置
+        * 

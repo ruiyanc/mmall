@@ -23,10 +23,11 @@ public interface OrderMapper {
 
     Order selectByOrderNo(Long orderNo);
 
-
-
     List<Order> selectByUserId(Integer userId);
 
-
     List<Order> selectAllOrder();
+
+    List<Order> selectOrderStatusByCreateTime(@Param("status")Integer status, @Param("date")String date);
+
+    int closeOrderByOrderId(Integer id);
 }

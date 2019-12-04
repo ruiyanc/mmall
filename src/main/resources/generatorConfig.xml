@@ -83,6 +83,6 @@
         <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
 
-        <!-- geelynote mybatis插件的搭建 -->
+        <!-- yanruinote mybatis插件的搭建 -->
     </context>
 </generatorConfiguration>

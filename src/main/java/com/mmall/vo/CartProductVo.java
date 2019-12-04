@@ -3,7 +3,7 @@ package com.mmall.vo;
 import java.math.BigDecimal;
 
 /**
- * Created by geely
+ * Created by yanrui
  */
 public class CartProductVo {
 

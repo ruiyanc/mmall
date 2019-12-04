@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by geely
+ * Created by yanrui
  */
 @Service("iProductService")
 public class ProductServiceImpl implements IProductService {
