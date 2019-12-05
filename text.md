@@ -42,5 +42,8 @@
 8. spring-session
 9. spring schedule -> 作业调度，如定时任务
     1. cron表达式
-    2. 配置
-        * 
+    2. 配置:\<task:annotation-driven/\>
+    3. @Scheduled(cron = "0 */1 * * * ?")
+10. schedule+redis分布式锁加调度任务
+11. redisson
+    * 重写原生redis->CloseOrderTask

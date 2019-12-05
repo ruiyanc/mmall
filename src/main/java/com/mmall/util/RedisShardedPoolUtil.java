@@ -42,12 +42,38 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    public static Long setnx(String key, String value) {
+        ShardedJedis jedis;
+        Long result;
+        try {
+            jedis = RedisShardedPool.getJedis();
+            result = jedis.setnx(key, value);
+        } catch (Exception e) {
+            log.error("setex key:{} value:{}", key, value);
+            return null;
+        }
+        return result;
+    }
+
     public static String set(String key, String value) {
         ShardedJedis jedis;
         String result;
         try {
             jedis = RedisShardedPool.getJedis();
             result = jedis.set(key, value);
+        } catch (Exception e) {
+            log.error("set key:{} value:{}", key, value);
+            return null;
+        }
+        return result;
+    }
+
+    public static String getset(String key, String value) {
+        ShardedJedis jedis;
+        String result;
+        try {
+            jedis = RedisShardedPool.getJedis();
+            result = jedis.getSet(key, value);
         } catch (Exception e) {
             log.error("set key:{} value:{}", key, value);
             return null;
